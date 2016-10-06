@@ -1,0 +1,401 @@
+@custom-media --breakpoint-not-small screen and (min-width: 30em);
+@custom-media --breakpoint-medium screen and (min-width: 30em) and (max-width: 60em);
+@custom-media --breakpoint-large screen and (min-width: 60em);
+
+/*
+
+   SVG
+
+   Base:
+     fill = fill color
+     stroke = stroke color
+     sw = stroke-width
+
+   Modifiers:
+     0 = 0 width stroke
+     1 = 1st step in stroke-width scale
+     2 = 2nd step in stroke-width scale
+     3 = 3rd step in stroke-width scale
+     4 = 4th step in stroke-width scale
+     5 = 5th step in stroke-width scale
+     6 = 6th step in stroke-width scale
+     7 = 7th step in stroke-width scale
+
+   Media Query Extensions:
+     -ns = not-small
+     -m  = medium
+     -l  = large
+*/
+
+:root {
+  --spacing-none: 0;
+  --spacing-extra-extra-small: .125rem;
+  --spacing-extra-small: .25rem;
+  --spacing-small: .5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-extra-large: 4rem;
+  --spacing-extra-extra-large: 8rem;
+
+  --black: #000;
+  --near-black: #111;
+  --dark-gray:#333;
+  --mid-gray:#555;
+  --gray: #777;
+  --silver: #999;
+  --light-silver: #aaa;
+  --moon-gray: #ccc;
+  --light-gray: #eee;
+  --near-white: #f4f4f4;
+  --white: #fff;
+
+  --transparent:transparent;
+
+  --black-90: rgba(0,0,0,.9);
+  --black-80: rgba(0,0,0,.8);
+  --black-70: rgba(0,0,0,.7);
+  --black-60: rgba(0,0,0,.6);
+  --black-50: rgba(0,0,0,.5);
+  --black-40: rgba(0,0,0,.4);
+  --black-30: rgba(0,0,0,.3);
+  --black-20: rgba(0,0,0,.2);
+  --black-10: rgba(0,0,0,.1);
+  --black-05: rgba(0,0,0,.05);
+  --black-025: rgba(0,0,0,.025);
+  --black-0125: rgba(0,0,0,.0125);
+
+  --white-90: rgba(255,255,255,.9);
+  --white-80: rgba(255,255,255,.8);
+  --white-70: rgba(255,255,255,.7);
+  --white-60: rgba(255,255,255,.6);
+  --white-50: rgba(255,255,255,.5);
+  --white-40: rgba(255,255,255,.4);
+  --white-30: rgba(255,255,255,.3);
+  --white-20: rgba(255,255,255,.2);
+  --white-10: rgba(255,255,255,.1);
+  --white-05: rgba(255,255,255,.05);
+  --white-025: rgba(255,255,255,.025);
+  --white-0125: rgba(255,255,255,.0125);
+
+  --dark-red:  #e7040f;
+  --red:  #ff4136;
+  --light-red:  #ff725c;
+  --orange:  #ff6300;
+  --gold:  #ffb700;
+  --yellow:  #ffd700;
+  --light-yellow:  #fbf1a9;
+  --purple:  #5e2ca5;
+  --light-purple:  #a463f2;
+  --dark-pink:  #d5008f;
+  --hot-pink: #ff41b4;
+  --pink:  #ff80cc;
+  --light-pink:  #ffa3d7;
+  --dark-green:  #137752;
+  --green:  #19a974;
+  --light-green:  #9eebcf;
+  --navy:  #001b44;
+  --dark-blue:  #00449e;
+  --blue:  #357edd;
+  --light-blue:  #96ccff;
+  --lightest-blue:  #cdecff;
+  --washed-blue:  #f6fffe;
+  --washed-green:  #e8fdf5;
+  --washed-yellow:  #fffceb;
+  --washed-red:  #ffdfdf;
+}
+
+/* Stroke colors */
+
+.stroke-black-90 { stroke: var(--black-90); }
+.stroke-black-80 { stroke: var(--black-80); }
+.stroke-black-70 { stroke: var(--black-70); }
+.stroke-black-60 { stroke: var(--black-60); }
+.stroke-black-50 { stroke: var(--black-50); }
+.stroke-black-40 { stroke: var(--black-40); }
+.stroke-black-30 { stroke: var(--black-30); }
+.stroke-black-20 { stroke: var(--black-20); }
+.stroke-black-10 { stroke: var(--black-10); }
+.stroke-black-05 { stroke: var(--black-05); }
+
+.stroke-white-90 { stroke: var(--white-90); }
+.stroke-white-80 { stroke: var(--white-80); }
+.stroke-white-70 { stroke: var(--white-70); }
+.stroke-white-60 { stroke: var(--white-60); }
+.stroke-white-50 { stroke: var(--white-50); }
+.stroke-white-40 { stroke: var(--white-40); }
+.stroke-white-30 { stroke: var(--white-30); }
+.stroke-white-20 { stroke: var(--white-20); }
+.stroke-white-10 { stroke: var(--white-10); }
+
+.stroke-black { stroke: var(--black); }
+.stroke-near-black { stroke: var(--near-black); }
+.stroke-dark-gray { stroke: var(--dark-gray); }
+.stroke-mid-gray { stroke: var(--mid-gray); }
+.stroke-gray { stroke: var(--gray); }
+.stroke-silver { stroke: var(--silver); }
+.stroke-light-silver { stroke: var(--light-silver); }
+.stroke-moon-gray { stroke: var(--moon-gray); }
+.stroke-light-gray { stroke: var(--light-gray); }
+.stroke-near-white { stroke: var(--near-white); }
+.stroke-white { stroke: var(--white); }
+
+.stroke-dark-red { stroke: var(--dark-red); }
+.stroke-red { stroke: var(--red); }
+.stroke-light-red { stroke: var(--light-red); }
+.stroke-orange { stroke: var(--orange); }
+.stroke-gold { stroke: var(--gold); }
+.stroke-yellow { stroke: var(--yellow); }
+.stroke-light-yellow { stroke: var(--light-yellow); }
+.stroke-purple { stroke: var(--purple); }
+.stroke-light-purple { stroke: var(--light-purple); }
+.stroke-dark-pink { stroke: var(--dark-pink); }
+.stroke-hot-pink { stroke: var(--hot-pink); }
+.stroke-pink { stroke: var(--pink); }
+.stroke-light-pink { stroke: var(--light-pink); }
+.stroke-dark-green { stroke: var(--dark-green); }
+.stroke-green { stroke: var(--green); }
+.stroke-light-green { stroke: var(--light-green); }
+.stroke-navy { stroke: var(--navy); }
+.stroke-dark-blue { stroke: var(--dark-blue); }
+.stroke-blue { stroke: var(--blue); }
+.stroke-light-blue { stroke: var(--light-blue); }
+.stroke-lightest-blue { stroke: var(--lightest-blue); }
+.stroke-washed-blue { stroke: var(--washed-blue); }
+.stroke-washed-green { stroke: var(--washed-green); }
+.stroke-washed-yellow { stroke: var(--washed-yellow); }
+.stroke-washed-red { stroke: var(--washed-red); }
+
+.stroke-current-color { stroke: currentColor; }
+
+/* Stroke hover colors */
+
+.hover-stroke-black-90:hover { stroke: var(--black-90); }
+.hover-stroke-black-80:hover { stroke: var(--black-80); }
+.hover-stroke-black-70:hover { stroke: var(--black-70); }
+.hover-stroke-black-60:hover { stroke: var(--black-60); }
+.hover-stroke-black-50:hover { stroke: var(--black-50); }
+.hover-stroke-black-40:hover { stroke: var(--black-40); }
+.hover-stroke-black-30:hover { stroke: var(--black-30); }
+.hover-stroke-black-20:hover { stroke: var(--black-20); }
+.hover-stroke-black-10:hover { stroke: var(--black-10); }
+.hover-stroke-black-05:hover { stroke: var(--black-05); }
+
+.hover-stroke-white-90:hover { stroke: var(--white-90); }
+.hover-stroke-white-80:hover { stroke: var(--white-80); }
+.hover-stroke-white-70:hover { stroke: var(--white-70); }
+.hover-stroke-white-60:hover { stroke: var(--white-60); }
+.hover-stroke-white-50:hover { stroke: var(--white-50); }
+.hover-stroke-white-40:hover { stroke: var(--white-40); }
+.hover-stroke-white-30:hover { stroke: var(--white-30); }
+.hover-stroke-white-20:hover { stroke: var(--white-20); }
+.hover-stroke-white-10:hover { stroke: var(--white-10); }
+
+.hover-stroke-black:hover { stroke: var(--black); }
+.hover-stroke-near-black:hover { stroke: var(--near-black); }
+.hover-stroke-dark-gray:hover { stroke: var(--dark-gray); }
+.hover-stroke-mid-gray:hover { stroke: var(--mid-gray); }
+.hover-stroke-gray:hover { stroke: var(--gray); }
+.hover-stroke-silver:hover { stroke: var(--silver); }
+.hover-stroke-light-silver:hover { stroke: var(--light-silver); }
+.hover-stroke-moon-gray:hover { stroke: var(--moon-gray); }
+.hover-stroke-light-gray:hover { stroke: var(--light-gray); }
+.hover-stroke-near-white:hover { stroke: var(--near-white); }
+.hover-stroke-white:hover { stroke: var(--white); }
+
+.hover-stroke-dark-red:hover { stroke: var(--dark-red); }
+.hover-stroke-red:hover { stroke: var(--red); }
+.hover-stroke-light-red:hover { stroke: var(--light-red); }
+.hover-stroke-orange:hover { stroke: var(--orange); }
+.hover-stroke-gold:hover { stroke: var(--gold); }
+.hover-stroke-yellow:hover { stroke: var(--yellow); }
+.hover-stroke-light-yellow:hover { stroke: var(--light-yellow); }
+.hover-stroke-purple:hover { stroke: var(--purple); }
+.hover-stroke-light-purple:hover { stroke: var(--light-purple); }
+.hover-stroke-dark-pink:hover { stroke: var(--dark-pink); }
+.hover-stroke-hot-pink:hover { stroke: var(--hot-pink); }
+.hover-stroke-pink:hover { stroke: var(--pink); }
+.hover-stroke-light-pink:hover { stroke: var(--light-pink); }
+.hover-stroke-dark-green:hover { stroke: var(--dark-green); }
+.hover-stroke-green:hover { stroke: var(--green); }
+.hover-stroke-light-green:hover { stroke: var(--light-green); }
+.hover-stroke-navy:hover { stroke: var(--navy); }
+.hover-stroke-dark-blue:hover { stroke: var(--dark-blue); }
+.hover-stroke-blue:hover { stroke: var(--blue); }
+.hover-stroke-light-blue:hover { stroke: var(--light-blue); }
+.hover-stroke-lightest-blue:hover { stroke: var(--lightest-blue); }
+.hover-stroke-washed-blue:hover { stroke: var(--washed-blue); }
+.hover-stroke-washed-green:hover { stroke: var(--washed-green); }
+.hover-stroke-washed-yellow:hover { stroke: var(--washed-yellow); }
+.hover-stroke-washed-red:hover { stroke: var(--washed-red); }
+
+.hover-stroke-current-color:hover { stroke: currentColor; }
+
+/* Fill colors */
+
+.fill-black-90 { fill: var(--black-90); }
+.fill-black-80 { fill: var(--black-80); }
+.fill-black-70 { fill: var(--black-70); }
+.fill-black-60 { fill: var(--black-60); }
+.fill-black-50 { fill: var(--black-50); }
+.fill-black-40 { fill: var(--black-40); }
+.fill-black-30 { fill: var(--black-30); }
+.fill-black-20 { fill: var(--black-20); }
+.fill-black-10 { fill: var(--black-10); }
+.fill-black-05 { fill: var(--black-05); }
+.fill-white-90 { fill: var(--white-90); }
+.fill-white-80 { fill: var(--white-80); }
+.fill-white-70 { fill: var(--white-70); }
+.fill-white-60 { fill: var(--white-60); }
+.fill-white-50 { fill: var(--white-50); }
+.fill-white-40 { fill: var(--white-40); }
+.fill-white-30 { fill: var(--white-30); }
+.fill-white-20 { fill: var(--white-20); }
+.fill-white-10 { fill: var(--white-10); }
+
+.fill-black { fill: var(--black); }
+.fill-near-black { fill: var(--near-black); }
+.fill-dark-gray { fill: var(--dark-gray); }
+.fill-mid-gray { fill: var(--mid-gray); }
+.fill-gray { fill: var(--gray); }
+.fill-silver  { fill: var(--silver); }
+.fill-light-silver { fill: var(--light-silver); }
+.fill-moon-gray { fill: var(--moon-gray); }
+.fill-light-gray { fill: var(--light-gray); }
+.fill-near-white { fill: var(--near-white); }
+.fill-white { fill: var(--white); }
+.fill-transparent { fill: var(--transparent); }
+
+.fill-dark-red { fill: var(--dark-red); }
+.fill-red { fill: var(--red); }
+.fill-light-red { fill: var(--light-red); }
+.fill-orange { fill: var(--orange); }
+.fill-gold { fill: var(--gold); }
+.fill-yellow { fill: var(--yellow); }
+.fill-light-yellow { fill: var(--light-yellow); }
+.fill-purple { fill: var(--purple); }
+.fill-light-purple { fill: var(--light-purple); }
+.fill-dark-pink { fill: var(--dark-pink); }
+.fill-hot-pink { fill: var(--hot-pink); }
+.fill-pink { fill: var(--pink); }
+.fill-light-pink { fill: var(--light-pink); }
+.fill-dark-green { fill: var(--dark-green); }
+.fill-green { fill: var(--green); }
+.fill-light-green { fill: var(--light-green); }
+.fill-navy { fill: var(--navy); }
+.fill-dark-blue { fill: var(--dark-blue); }
+.fill-blue { fill: var(--blue); }
+.fill-light-blue { fill: var(--light-blue); }
+.fill-lightest-blue { fill: var(--lightest-blue); }
+.fill-washed-blue { fill: var(--washed-blue); }
+.fill-washed-green { fill: var(--washed-green); }
+.fill-washed-yellow { fill: var(--washed-yellow); }
+.fill-washed-red { fill: var(--washed-red); }
+
+.fill-current-color { fill: currentColor; }
+
+/* Fill hover colors */
+
+.hover-fill-black-90:hover { fill: var(--black-90); }
+.hover-fill-black-80:hover { fill: var(--black-80); }
+.hover-fill-black-70:hover { fill: var(--black-70); }
+.hover-fill-black-60:hover { fill: var(--black-60); }
+.hover-fill-black-50:hover { fill: var(--black-50); }
+.hover-fill-black-40:hover { fill: var(--black-40); }
+.hover-fill-black-30:hover { fill: var(--black-30); }
+.hover-fill-black-20:hover { fill: var(--black-20); }
+.hover-fill-black-10:hover { fill: var(--black-10); }
+.hover-fill-black-05:hover { fill: var(--black-05); }
+.hover-fill-white-90:hover { fill: var(--white-90); }
+.hover-fill-white-80:hover { fill: var(--white-80); }
+.hover-fill-white-70:hover { fill: var(--white-70); }
+.hover-fill-white-60:hover { fill: var(--white-60); }
+.hover-fill-white-50:hover { fill: var(--white-50); }
+.hover-fill-white-40:hover { fill: var(--white-40); }
+.hover-fill-white-30:hover { fill: var(--white-30); }
+.hover-fill-white-20:hover { fill: var(--white-20); }
+.hover-fill-white-10:hover { fill: var(--white-10); }
+
+.hover-fill-black:hover { fill: var(--black); }
+.hover-fill-near-black:hover { fill: var(--near-black); }
+.hover-fill-dark-gray:hover { fill: var(--dark-gray); }
+.hover-fill-mid-gray:hover { fill: var(--mid-gray); }
+.hover-fill-gray:hover { fill: var(--gray); }
+.hover-fill-silver :hover { fill: var(--silver); }
+.hover-fill-light-silver:hover { fill: var(--light-silver); }
+.hover-fill-moon-gray:hover { fill: var(--moon-gray); }
+.hover-fill-light-gray:hover { fill: var(--light-gray); }
+.hover-fill-near-white:hover { fill: var(--near-white); }
+.hover-fill-white:hover { fill: var(--white); }
+.hover-fill-transparent:hover { fill: var(--transparent); }
+
+.hover-fill-dark-red:hover { fill: var(--dark-red); }
+.hover-fill-red:hover { fill: var(--red); }
+.hover-fill-light-red:hover { fill: var(--light-red); }
+.hover-fill-orange:hover { fill: var(--orange); }
+.hover-fill-gold:hover { fill: var(--gold); }
+.hover-fill-yellow:hover { fill: var(--yellow); }
+.hover-fill-light-yellow:hover { fill: var(--light-yellow); }
+.hover-fill-purple:hover { fill: var(--purple); }
+.hover-fill-light-purple:hover { fill: var(--light-purple); }
+.hover-fill-dark-pink:hover { fill: var(--dark-pink); }
+.hover-fill-hot-pink:hover { fill: var(--hot-pink); }
+.hover-fill-pink:hover { fill: var(--pink); }
+.hover-fill-light-pink:hover { fill: var(--light-pink); }
+.hover-fill-dark-green:hover { fill: var(--dark-green); }
+.hover-fill-green:hover { fill: var(--green); }
+.hover-fill-light-green:hover { fill: var(--light-green); }
+.hover-fill-navy:hover { fill: var(--navy); }
+.hover-fill-dark-blue:hover { fill: var(--dark-blue); }
+.hover-fill-blue:hover { fill: var(--blue); }
+.hover-fill-light-blue:hover { fill: var(--light-blue); }
+.hover-fill-lightest-blue:hover { fill: var(--lightest-blue); }
+.hover-fill-washed-blue:hover { fill: var(--washed-blue); }
+.hover-fill-washed-green:hover { fill: var(--washed-green); }
+.hover-fill-washed-yellow:hover { fill: var(--washed-yellow); }
+.hover-fill-washed-red:hover { fill: var(--washed-red); }
+
+.hover-fill-current-color:hover { fill: currentColor; }
+
+/* Stroke widths */
+
+.sw0 { stroke-width: 0; }
+.sw1 { stroke-width: var(--spacing-extra-extra-small); }
+.sw2 { stroke-width: var(--spacing-extra-small); }
+.sw3 { stroke-width: var(--spacing-small); }
+.sw4 { stroke-width: var(--spacing-medium); }
+.sw5 { stroke-width: var(--spacing-large); }
+.sw6 { stroke-width: var(--spacing-extra-large); }
+.sw7 { stroke-width: var(--spacing-extra-extra-large); }
+
+@media (--breakpoint-not-small) {
+  .sw0-ns { stroke-width: 0; }
+  .sw1-ns { stroke-width: var(--spacing-extra-extra-small); }
+  .sw2-ns { stroke-width: var(--spacing-extra-small); }
+  .sw3-ns { stroke-width: var(--spacing-small); }
+  .sw4-ns { stroke-width: var(--spacing-medium); }
+  .sw5-ns { stroke-width: var(--spacing-large); }
+  .sw6-ns { stroke-width: var(--spacing-extra-large); }
+  .sw7-ns { stroke-width: var(--spacing-extra-extra-large); }
+}
+
+@media (--breakpoint-medium) {
+  .sw0-m { stroke-width: 0; }
+  .sw1-m { stroke-width: var(--spacing-extra-extra-small); }
+  .sw2-m { stroke-width: var(--spacing-extra-small); }
+  .sw3-m { stroke-width: var(--spacing-small); }
+  .sw4-m { stroke-width: var(--spacing-medium); }
+  .sw5-m { stroke-width: var(--spacing-large); }
+  .sw6-m { stroke-width: var(--spacing-extra-large); }
+  .sw7-m { stroke-width: var(--spacing-extra-extra-large); }
+}
+
+@media (--breakpoint-large) {
+  .sw0-l { stroke-width: 0; }
+  .sw1-l { stroke-width: var(--spacing-extra-extra-small); }
+  .sw2-l { stroke-width: var(--spacing-extra-small); }
+  .sw3-l { stroke-width: var(--spacing-small); }
+  .sw4-l { stroke-width: var(--spacing-medium); }
+  .sw5-l { stroke-width: var(--spacing-large); }
+  .sw6-l { stroke-width: var(--spacing-extra-large); }
+  .sw7-l { stroke-width: var(--spacing-extra-extra-large); }
+}

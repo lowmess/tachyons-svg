@@ -1,0 +1,37 @@
+{
+  "name": "tachyons-svg",
+  "version": "1.0.0",
+  "style": "src/tachyons-svg.css",
+  "description": "Tachyons module for manipulating common SVG attributes",
+  "keywords": [
+    "tachyons",
+    "tachyons-css"
+  ],
+  "files": [
+    "src",
+    "css"
+  ],
+  "repository": "lowmess/tachyons-svg",
+  "author": {
+    "name": "Alec Lomas",
+    "email": "alec@lowmess.com",
+    "url": "http://lowmess.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "tachyons-cli": "^1.0.5",
+    "watch": "^0.19.1"
+  },
+  "scripts": {
+    "start": "npm run build:watch",
+    "build:css": "tachyons src/tachyons-svg.css > css/tachyons-svg.css",
+    "build:minify": "tachyons src/tachyons-svg.css --minify > css/tachyons-svg.min.css",
+    "build:docs": "tachyons src/tachyons-svg.css --generate-docs -a --package=../../package.json > readme.md",
+    "build": "npm run build:css && npm run build:minify && npm run build:docs",
+    "build:watch": "watch 'npm run build' ./src"
+  },
+  "tachyonsModule": {
+    "category": "elements",
+    "isCore": false
+  }
+}
