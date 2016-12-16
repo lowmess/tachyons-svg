@@ -1,7 +1,8 @@
 {
   "name": "tachyons-svg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "style": "src/tachyons-svg.css",
+  "main": "src/tachyons-svg.css",
   "description": "Tachyons module for manipulating common SVG attributes",
   "keywords": [
     "tachyons",

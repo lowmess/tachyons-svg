@@ -1,4 +1,4 @@
-# tachyons-svg 1.0.0
+# tachyons-svg 1.0.1
 
 Tachyons module for manipulating common SVG attributes
 
@@ -55,7 +55,7 @@ $ tachyons path/to/css-file.css > dist/t.css
 The easiest and most simple way to use the css is to use the cdn hosted version. Include it in the head of your html with:
 
 ```
-<link rel="stylesheet" href="http://unpkg.com/tachyons-svg@1.0.0/css/tachyons-svg.min.css" />
+<link rel="stylesheet" href="http://unpkg.com/tachyons-svg@1.0.1/css/tachyons-svg.min.css" />
 ```
 
 ##### Locally
